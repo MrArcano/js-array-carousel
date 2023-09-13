@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: darkseagreen;
+}
+
 /* ------------------------------------------------------ */
 /* CAROUSEL */
 /* ------------------------------------------------------ */
@@ -53,6 +57,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 3;
 }
 
 .btn-up{
@@ -70,12 +75,12 @@
 .carousel-thumbnails{
   width: 150px;
   height: 100%;
-  background-color: rgb(214, 158, 85);
   position: relative;
 }
 
 .carousel-thumb{
   height: 100%;
+  background-color: black; /* per la questione active */
 }
 
 .carousel-thumb img{
@@ -92,5 +97,24 @@
 .hide{
   display: none;
 }
+
+.active{
+  position: relative;
+  opacity: 0.8;
+  border: 4px solid white;
+}
+
+/* .active::after{
+  position: absolute;
+  content: "";
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid white;
+
+} */
 
 

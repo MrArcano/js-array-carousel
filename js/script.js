@@ -1,5 +1,7 @@
 // carousel image
 const carouselImg = document.querySelector(".carousel-img");
+const thumbnailsImg = document.querySelector(".carousel-thumb");
+
 // button
 const btnUp = document.querySelector(".btn-up") 
 const btnDown = document.querySelector(".btn-down")
@@ -17,24 +19,27 @@ const imgArray = [
 // -----------------------------------------------
 for(let i=0; i<imgArray.length; i++){
   carouselImg.innerHTML += `<img src="${imgArray[i]}" class="hide img-car">`
+  thumbnailsImg.innerHTML += `<img src="${imgArray[i]}" class="thumb-car">`
 }
 // -----------------------------------------------
 
 // Indice dell'immagine visibile nel carousel
 indexImg = 0;
 
-// Array di elementi html per "img-car"
+// Array di elementi html per "img-car" e "thumb-car"
 const carouselArray = document.getElementsByClassName("img-car")
-console.log(carouselArray);
+const thumbArray = document.getElementsByClassName("thumb-car")
 
 // Di default rimuovo al primo elemento la classe hide
 carouselArray[indexImg].classList.remove("hide");
+thumbArray[indexImg].classList.add("active");
 
 // al click del button up
 btnUp.addEventListener("click", function(){
   console.log("cliccato UP");
 
   carouselArray[indexImg].classList.add("hide");
+  thumbArray[indexImg].classList.remove("active");
 
   if(indexImg == 0){
     indexImg = carouselArray.length - 1;
@@ -43,7 +48,7 @@ btnUp.addEventListener("click", function(){
   }
 
   carouselArray[indexImg].classList.remove("hide");
-
+  thumbArray[indexImg].classList.add("active");
 
 });
 
@@ -52,6 +57,7 @@ btnDown.addEventListener("click", function(){
   console.log("cliccato DOWN");
 
   carouselArray[indexImg].classList.add("hide");
+  thumbArray[indexImg].classList.remove("active");
 
   if(indexImg == carouselArray.length - 1){
     indexImg = 0;
@@ -60,5 +66,5 @@ btnDown.addEventListener("click", function(){
   }
   
   carouselArray[indexImg].classList.remove("hide");
-
+  thumbArray[indexImg].classList.add("active");
 });
