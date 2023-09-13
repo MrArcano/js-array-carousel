@@ -90,6 +90,10 @@ body{
   display: block;
 }
 
+.thumb-car{
+  opacity: 0.5;
+}
+
 
 /* ------------------------------------------------------ */
 /* UTILITY */
@@ -100,7 +104,7 @@ body{
 
 .active{
   position: relative;
-  opacity: 0.8;
+  opacity: 1;
   border: 4px solid white;
 }
 
