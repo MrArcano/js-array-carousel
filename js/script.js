@@ -28,16 +28,37 @@ const carouselArray = document.getElementsByClassName("img-car")
 console.log(carouselArray);
 
 // Di default rimuovo al primo elemento la classe hide
-carouselArray[0].classList.remove("hide");
+carouselArray[indexImg].classList.remove("hide");
 
 // al click del button up
 btnUp.addEventListener("click", function(){
   console.log("cliccato UP");
+
+  carouselArray[indexImg].classList.add("hide");
+
+  if(indexImg == 0){
+    indexImg = carouselArray.length - 1;
+  }else{
+    indexImg--;
+  }
+
+  carouselArray[indexImg].classList.remove("hide");
+
 
 });
 
 // al click del button down
 btnDown.addEventListener("click", function(){
   console.log("cliccato DOWN");
+
+  carouselArray[indexImg].classList.add("hide");
+
+  if(indexImg == carouselArray.length - 1){
+    indexImg = 0;
+  }else{
+    indexImg++;
+  }
+  
+  carouselArray[indexImg].classList.remove("hide");
 
 });
