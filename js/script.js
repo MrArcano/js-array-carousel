@@ -24,7 +24,7 @@ for(let i=0; i<imgArray.length; i++){
 // -----------------------------------------------
 
 // Indice dell'immagine visibile nel carousel
-indexImg = 0;
+let indexImg = 0;
 
 // Array di elementi html per "img-car" e "thumb-car"
 const carouselArray = document.getElementsByClassName("img-car")
